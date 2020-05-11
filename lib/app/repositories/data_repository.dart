@@ -5,10 +5,13 @@ import 'package:flutter/foundation.dart';
 class DataRepository {
   DataRepository({@required this.apiService});
   final APIService apiService;
+  String _accessToken;
 
   Future<int> getEndpointData(Endpoint endpoint) async {
-    final accessToken = await apiService.getAccessToken();
+    if (_accessToken == null) {
+      _accessToken = await apiService.getAccessToken();
+    }
     return await apiService.getEndpointData(
-        accessToken: accessToken, endpoint: endpoint);
+        accessToken: _accessToken, endpoint: endpoint);
   }
 }
