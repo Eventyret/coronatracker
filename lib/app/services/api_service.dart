@@ -1,5 +1,7 @@
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
+
 import 'api.dart';
 
 class APIService {
@@ -14,11 +16,12 @@ class APIService {
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       final accessToken = data['access_token'];
-      if (accessToken != 200) {
+      if (accessToken != null) {
         return accessToken;
       }
     }
-    print('Request ${api.tokenUri()} failed\nResposne: ${response.statusCode} ${response.reasonPhrase}');
+    print(
+        'Request ${api.tokenUri()} failed\nResponse: ${response.statusCode} ${response.reasonPhrase}');
     throw response;
   }
 }
