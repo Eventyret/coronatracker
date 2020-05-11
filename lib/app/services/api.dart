@@ -1,7 +1,15 @@
 import 'package:coronavirus_tracker/app/services/api_keys.dart';
 import 'package:flutter/foundation.dart';
 
-enum Endpoint { cases, totalTests, deaths, recovered }
+enum Endpoint {
+  cases,
+  totalTests,
+  deaths,
+  recovered,
+  todayCases,
+  todayDeaths,
+  critical
+}
 
 class API {
   API({@required this.apiKey});
@@ -31,6 +39,9 @@ class API {
     Endpoint.cases: 'cases',
     Endpoint.totalTests: 'totalTests',
     Endpoint.deaths: 'deaths',
-    Endpoint.recovered: 'recovered'
+    Endpoint.recovered: 'recovered',
+    Endpoint.todayCases: 'todayCases',
+    Endpoint.todayDeaths: 'todayDeaths',
+    Endpoint.critical: 'critical',
   };
 }
