@@ -1,3 +1,5 @@
+import 'package:coronavirus_tracker/app/services/api.dart';
+import 'package:coronavirus_tracker/app/ui/endpoint_card.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
@@ -15,7 +17,12 @@ class _DashboardState extends State<Dashboard> {
         title: Text('Coronavirus Tracker'),
       ),
       body: ListView(
-        children: <Widget>[],
+        children: <Widget>[
+          EndpointCard(
+            endpoint: Endpoint.cases,
+            value: 123,
+          )
+        ],
       ),
     );
   }
