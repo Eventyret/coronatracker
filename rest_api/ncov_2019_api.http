@@ -1,0 +1,2 @@
+POST  {{baseUrl}}/token?grant_type=client_credentials
+Authorization:  Basic {{authorization}}
