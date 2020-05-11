@@ -8,7 +8,7 @@ class API {
   factory API.sandbox() => API(apiKey: APIKeys.ncovSandboxKey);
 
   static final String host = 'apigw.nubentos.com';
-  static final int port = 442;
+  static final int port = 443;
 
   Uri tokenUri() => Uri(
         scheme: 'https',
