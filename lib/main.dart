@@ -47,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _accessToken = accessToken;
       _deaths = deaths;
+      _cases = cases;
     });
   }
 
