@@ -214,6 +214,21 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      "Spread of Virus",
+                      style: kTitleTextstyle,
+                    ),
+                    Text(
+                      "See details",
+                      style: TextStyle(
+                          color: kPrimaryColor, fontWeight: FontWeight.w600),
+                    ),
+                  ],
                 )
               ],
             ),
