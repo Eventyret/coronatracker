@@ -1,3 +1,4 @@
+import 'package:coronavirus_tracker/app/repositories/endpoints_data.dart';
 import 'package:coronavirus_tracker/app/services/api.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +6,16 @@ class EndpointCard extends StatelessWidget {
   const EndpointCard({Key key, this.endpoint, this.value}) : super(key: key);
   final Endpoint endpoint;
   final int value;
+
+  static Map<Endpoint, String> _cardTitles = {
+    Endpoint.cases: 'Cases',
+    Endpoint.critical: 'Critical',
+    Endpoint.deaths: 'Deaths',
+    Endpoint.recovered: 'Recovered',
+    Endpoint.todayCases: 'Cases Today',
+    Endpoint.todayDeaths: 'Deaths Today',
+    Endpoint.totalTests: 'Total Tests'
+  };
 
   @override
   Widget build(BuildContext context) {
