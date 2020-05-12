@@ -196,41 +196,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   child: Row(
                     children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.all(6),
-                            height: 25,
-                            width: 25,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: kInfectedColor.withOpacity(.26),
-                            ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.transparent,
-                                border:
-                                    Border.all(color: kInfectedColor, width: 2),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "1046",
-                            style: TextStyle(
-                              fontSize: 40,
-                              color: kInfectedColor,
-                            ),
-                          ),
-                          Text(
-                            "Infected",
-                            style: kSubTextStyle,
-                          )
-                        ],
-                      )
+                      Counter(),
                     ],
                   ),
                 )
@@ -239,6 +205,56 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class Counter extends StatelessWidget {
+  final int number;
+  final Color color;
+  final String title;
+  const Counter({
+    Key key,
+    this.number,
+    this.color,
+    this.title,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(6),
+          height: 25,
+          width: 25,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: kInfectedColor.withOpacity(.26),
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.transparent,
+              border: Border.all(color: kInfectedColor, width: 2),
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Text(
+          "1046",
+          style: TextStyle(
+            fontSize: 40,
+            color: kInfectedColor,
+          ),
+        ),
+        Text(
+          "Infected",
+          style: kSubTextStyle,
+        )
+      ],
     );
   }
 }
