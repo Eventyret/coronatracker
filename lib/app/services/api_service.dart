@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:coronavirus_tracker/app/services/endpoint_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
@@ -26,7 +27,7 @@ class APIService {
     throw response;
   }
 
-  Future<int> getEndpointData({
+  Future<EndpointData> getEndpointData({
     @required String accessToken,
     @required Endpoint endpoint,
   }) async {
@@ -38,15 +39,18 @@ class APIService {
       if (data.isNotEmpty) {
         final Map<String, dynamic> endpointData = data[0];
         final String responseJsonKey = _responseJsonKeys[endpoint];
-        final int result = endpointData[responseJsonKey];
+        final int value = endpointData[responseJsonKey];
         final String dateString = endpointData['date'];
         final date = DateTime.tryParse(dateString);
-        if (result != null) {
-          return result;
+        if (value != null) {
+          return EndpointData(
+            value: value,
+            date: date,
+          );
         }
       }
     }
-      print(
+    print(
         'Request $uri failed\nResponse: ${response.statusCode} ${response.reasonPhrase}');
     throw response;
   }
