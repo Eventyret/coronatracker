@@ -37,6 +37,12 @@ class _DashboardState extends State<Dashboard> {
           title: 'Connection Error',
           content: 'Could not retrive data. Please try again later.',
           defaultActionText: 'OK');
+    } catch (_) {
+      showAlertDialog(
+          context: context,
+          title: 'Unknown Error',
+          content: 'Please contact support or try again later. ',
+          defaultActionText: 'OK');
     }
   }
 
