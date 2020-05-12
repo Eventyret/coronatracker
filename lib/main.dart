@@ -111,7 +111,41 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
+          Container(
+            height: 60,
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(
+              vertical: 10,
+              horizontal: 20,
+            ),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(
+                  color: Color(0xFFE5E5E5),
+                )),
+            child: Row(
+              children: <Widget>[
+                SvgPicture.asset("assets/icons/maps-and-flags.svg"),
+                Expanded(
+                  child: DropdownButton(
+                    items: ['Europe', 'World', 'US', 'China Mainland']
+                        .map<DropdownMenuItem<String>>(
+                      (String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      },
+                    ).toList(),
+                    onChanged: (value) {},
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
