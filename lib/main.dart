@@ -11,6 +11,7 @@ import 'app/services/api.dart';
 import 'app/services/api_service.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   Intl.defaultLocale = 'en_GB';
   final sharedPrefences = await SharedPreferences.getInstance();
   await initializeDateFormatting();
