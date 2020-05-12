@@ -33,12 +33,12 @@ class InfoScreen extends StatelessWidget {
                     SymptomsCard(
                       image: "assets/images/headache.png",
                       title: "Headache",
-                      isActive: true,
+                      isActive: false,
                     ),
                     SymptomsCard(
                       image: "assets/images/caugh.png",
                       title: "Caugh",
-                      isActive: false,
+                      isActive: true,
                     ),
                     SymptomsCard(
                       image: "assets/images/fever.png",
@@ -46,7 +46,18 @@ class InfoScreen extends StatelessWidget {
                       isActive: false,
                     ),
                   ],
-                )
+                ),
+                SizedBox(height: 20),
+                Text("Prevention", style: kTitleTextstyle),
+                SizedBox(height: 20),
+                SizedBox(
+                  height: 156,
+                  child: Stack(
+                    children: <Widget>[
+                      
+                    ],
+                  ),
+                ),
               ],
             ),
           )
