@@ -51,7 +51,7 @@ class MyHeader extends StatelessWidget {
               child: Stack(
                 children: <Widget>[
                   SvgPicture.asset(
-                   image
+                    image,
                     width: 230,
                     fit: BoxFit.fitWidth,
                     alignment: Alignment.topCenter,

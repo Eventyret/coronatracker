@@ -1,4 +1,3 @@
-
 import 'package:coronavirus_tracker/widgets/counter.dart';
 import 'package:coronavirus_tracker/widgets/header.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,11 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          MyHeader(),
+          MyHeader(
+            image: "assets/icons/Drcorona.svg",
+            textTop: "All you need",
+            textBottom: "is to stay home",
+          ),
           Container(
             height: 60,
             width: double.infinity,
