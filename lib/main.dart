@@ -1,4 +1,5 @@
 import 'package:coronavirus_tracker/app/services/data_cache_Service.dart';
+import 'package:coronavirus_tracker/app/ui/dashboard.dart';
 import 'package:coronavirus_tracker/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -96,12 +97,14 @@ class HomeScreen extends StatelessWidget {
                         ),
                         Positioned(
                           top: 20,
+                          left: 150,
                           child: Text(
                             "All you need \nis to stay at home.",
                             style:
                                 kHeadingTextStyle.copyWith(color: Colors.white),
                           ),
-                        )
+                        ),
+                        Container(), // Empty container lets text overflow
                       ],
                     ),
                   )
