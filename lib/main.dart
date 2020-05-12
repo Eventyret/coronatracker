@@ -131,7 +131,8 @@ class HomeScreen extends StatelessWidget {
                 SvgPicture.asset("assets/icons/maps-and-flags.svg"),
                 Expanded(
                   child: DropdownButton(
-                    items: ['Europe', 'World', 'US', 'China Mainland']
+                    value: 'World',
+                    items: ['World', 'Europe', 'US', 'China Mainland']
                         .map<DropdownMenuItem<String>>(
                       (String value) {
                         return DropdownMenuItem<String>(
