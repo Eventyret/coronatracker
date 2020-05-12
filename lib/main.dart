@@ -229,7 +229,7 @@ class HomeScreen extends StatelessWidget {
                           color: kPrimaryColor, fontWeight: FontWeight.w600),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
