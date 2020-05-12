@@ -16,15 +16,15 @@ class EndpointCard extends StatelessWidget {
 
   static Map<Endpoint, EndPointCardData> _cardsData = {
     Endpoint.cases:
-        EndPointCardData('Total Cases', 'assets/count.png', Colors.yellow),
+        EndPointCardData('Total Cases', 'assets/images/count.png', Colors.yellow),
     Endpoint.deaths:
-        EndPointCardData('Total Deaths', 'assets/death.png', Colors.red[800]),
+        EndPointCardData('Total Deaths', 'assets/images/death.png', Colors.red[800]),
     Endpoint.recovered:
-        EndPointCardData('Recovered', 'assets/patient.png', Colors.green),
+        EndPointCardData('Recovered', 'assets/images/patient.png', Colors.green),
     Endpoint.todayCases:
-        EndPointCardData('Cases Today', 'assets/suspect.png', Colors.amber),
+        EndPointCardData('Cases Today', 'assets/images/suspect.png', Colors.amber),
     Endpoint.todayDeaths:
-        EndPointCardData('Deaths Today', 'assets/death.png', Colors.red[800]),
+        EndPointCardData('Deaths Today', 'assets/images/death.png', Colors.red[800]),
   };
 
   String get formattedValue {
