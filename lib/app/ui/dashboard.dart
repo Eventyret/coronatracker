@@ -22,6 +22,8 @@ class _DashboardState extends State<Dashboard> {
   @override
   void initState() {
     super.initState();
+    final dataRepository = Provider.of<DataRepository>(context, listen: false);
+    _endpointsData = dataRepository.getAllEndpointsCachedData();
     _updateData();
   }
 
