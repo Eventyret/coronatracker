@@ -9,23 +9,17 @@ class DataRepository {
   final APIService apiService;
   String _accessToken;
 
-  Future<int> getEndpointData(Endpoint endpoint) async {
-    try {
-      if (_accessToken == null) {
-        _accessToken = await apiService.getAccessToken();
-      }
-      return await apiService.getEndpointData(
-          accessToken: _accessToken, endpoint: endpoint);
-    } on Response catch (response) {
-      if (response.statusCode == 401) {
-        _accessToken = await apiService.getAccessToken();
-        return await apiService.getEndpointData(
-            accessToken: _accessToken, endpoint: endpoint);
-      }
-      rethrow;
-    }
-  }
-  
+  Future<int> getEndpointData(Endpoint endpoint) async =>
+      await _getDataRefreshingToken<int>(
+        onGetData: () => apiService.getEndpointData(
+            accessToken: _accessToken, endpoint: endpoint),
+      );
+
+  Future<EndpointsData> getAllEnpointsData() async =>
+      await _getDataRefreshingToken<EndpointsData>(
+        onGetData: _getAllEndpointsData,
+      );
+
   Future<EndpointsData> getAllEndpointData() async {
     try {
       if (_accessToken == null) {
@@ -36,6 +30,21 @@ class DataRepository {
       if (response.statusCode == 401) {
         _accessToken = await apiService.getAccessToken();
         return await getAllEndpointData();
+      }
+      rethrow;
+    }
+  }
+
+  Future<T> _getDataRefreshingToken<T>({Future<T> Function() onGetData}) async {
+    try {
+      if (_accessToken == null) {
+        _accessToken = await apiService.getAccessToken();
+      }
+      return await onGetData();
+    } on Response catch (response) {
+      if (response.statusCode == 401) {
+        _accessToken = await apiService.getAccessToken();
+        return await onGetData();
       }
       rethrow;
     }
