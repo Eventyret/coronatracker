@@ -80,6 +80,7 @@ class InfoScreen extends StatelessWidget {
                           width: MediaQuery.of(context).size.width - 170,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Text(
                                 "Wear face mask",
