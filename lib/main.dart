@@ -215,7 +215,20 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "1046",
+                            style: TextStyle(
+                              fontSize: 40,
+                              color: kInfectedColor,
+                            ),
+                          ),
+                          Text(
+                            "Infected",
+                            style: kSubTextStyle,
+                          )
                         ],
                       )
                     ],
