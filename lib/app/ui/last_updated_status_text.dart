@@ -1,4 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
+class LastUpdatedDateFormatter {
+  LastUpdatedDateFormatter({@required this.lastupdated});
+  final DateTime lastupdated;
+
+  String lastUpdatedStatusText() {
+    if (lastupdated != null) {
+      final formatter = DateFormat.yMd().add_Hms();
+      final formatted = formatter.format(lastupdated);
+      return 'Last updated: $formatted';
+    }
+    return '';
+  }
+}
 
 class LastUpdatedStatusText extends StatelessWidget {
   const LastUpdatedStatusText({
