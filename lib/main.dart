@@ -1,5 +1,6 @@
 import 'package:coronavirus_tracker/app/services/data_cache_Service.dart';
 import 'package:coronavirus_tracker/constant.dart';
+import 'package:coronavirus_tracker/screens/infoscreen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:intl/date_symbol_data_local.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
             bodyText2: TextStyle(color: kBodyTextColor),
           ),
         ),
-        home: HomeScreen(),
+        home: InfoScreen(),
       ),
     );
   }
