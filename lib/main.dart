@@ -93,6 +93,14 @@ class HomeScreen extends StatelessWidget {
                           width: 230,
                           fit: BoxFit.fitWidth,
                           alignment: Alignment.topCenter,
+                        ),
+                        Positioned(
+                          top: 20,
+                          child: Text(
+                            "All you need \nis to stay at home.",
+                            style:
+                                kHeadingTextStyle.copyWith(color: Colors.white),
+                          ),
                         )
                       ],
                     ),
