@@ -21,3 +21,8 @@ Authorization: Bearer {{accessToken}}
 GET {{baseUrl}}/t/nubentos.com/ncovapi/2.0.0/recovered
 Accept: application/json
 Authorization: Bearer {{accessToken}}
+
+###
+GET {{baseUrl}}/t/nubentos.com/ncovapi/2.0.0/totalTests
+Accept: application/json
+Authorization: Bearer {{accessToken}}

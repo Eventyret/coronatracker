@@ -3,12 +3,10 @@ import 'package:flutter/foundation.dart';
 
 enum Endpoint {
   cases,
-  totalTests,
   deaths,
   recovered,
   todayCases,
   todayDeaths,
-  critical
 }
 
 class API {
@@ -37,11 +35,9 @@ class API {
 
   static Map<Endpoint, String> _paths = {
     Endpoint.cases: 'cases',
-    Endpoint.totalTests: 'totalTests',
     Endpoint.deaths: 'deaths',
     Endpoint.recovered: 'recovered',
     Endpoint.todayCases: 'todayCases',
     Endpoint.todayDeaths: 'todayDeaths',
-    Endpoint.critical: 'critical',
   };
 }

@@ -55,8 +55,6 @@ class DataRepository {
       apiService.getEndpointData(
           accessToken: _accessToken, endpoint: Endpoint.cases),
       apiService.getEndpointData(
-          accessToken: _accessToken, endpoint: Endpoint.totalTests),
-      apiService.getEndpointData(
           accessToken: _accessToken, endpoint: Endpoint.deaths),
       apiService.getEndpointData(
           accessToken: _accessToken, endpoint: Endpoint.recovered),
@@ -64,17 +62,13 @@ class DataRepository {
           accessToken: _accessToken, endpoint: Endpoint.todayCases),
       apiService.getEndpointData(
           accessToken: _accessToken, endpoint: Endpoint.todayDeaths),
-      apiService.getEndpointData(
-          accessToken: _accessToken, endpoint: Endpoint.critical),
     ]);
     return EndpointsData(values: {
       Endpoint.cases: values[0],
-      Endpoint.totalTests: values[1],
-      Endpoint.deaths: values[2],
-      Endpoint.recovered: values[3],
-      Endpoint.todayCases: values[4],
-      Endpoint.todayDeaths: values[5],
-      Endpoint.critical: values[6],
+      Endpoint.deaths: values[1],
+      Endpoint.recovered: values[2],
+      Endpoint.todayCases: values[3],
+      Endpoint.todayDeaths: values[4],
     });
   }
 }

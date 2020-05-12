@@ -38,7 +38,7 @@ class _DashboardState extends State<Dashboard> {
           children: <Widget>[
             for (var endpoint in Endpoint.values)
               EndpointCard(
-                endpoint: Endpoint.cases,
+                endpoint: endpoint,
                 value: _endpointsData != null
                     ? _endpointsData.values[endpoint]
                     : null,
