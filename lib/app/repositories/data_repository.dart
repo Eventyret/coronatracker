@@ -1,3 +1,4 @@
+import 'package:coronavirus_tracker/app/repositories/endpoints_data.dart';
 import 'package:coronavirus_tracker/app/services/api.dart';
 import 'package:coronavirus_tracker/app/services/api_service.dart';
 import 'package:flutter/foundation.dart';
@@ -24,9 +25,24 @@ class DataRepository {
       rethrow;
     }
   }
+  
+  Future<EndpointsData> getAllEndpointData() async {
+    try {
+      if (_accessToken == null) {
+        _accessToken = await apiService.getAccessToken();
+      }
+      return await _getAllEndpointsData();
+    } on Response catch (response) {
+      if (response.statusCode == 401) {
+        _accessToken = await apiService.getAccessToken();
+        return await getAllEndpointData();
+      }
+      rethrow;
+    }
+  }
 
-  Future<void> _getAllEndpointsData() async {
-    await Future.wait([
+  Future<EndpointsData> _getAllEndpointsData() async {
+    final values = await Future.wait([
       apiService.getEndpointData(
           accessToken: _accessToken, endpoint: Endpoint.cases),
       apiService.getEndpointData(
@@ -42,5 +58,14 @@ class DataRepository {
       apiService.getEndpointData(
           accessToken: _accessToken, endpoint: Endpoint.critical),
     ]);
+    return EndpointsData(values: {
+      Endpoint.cases: values[0],
+      Endpoint.totalTests: values[1],
+      Endpoint.deaths: values[2],
+      Endpoint.recovered: values[3],
+      Endpoint.todayCases: values[4],
+      Endpoint.todayDeaths: values[5],
+      Endpoint.critical: values[6],
+    });
   }
 }
