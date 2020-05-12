@@ -7,7 +7,7 @@ class LastUpdatedDateFormatter {
 
   String lastUpdatedStatusText() {
     if (lastupdated != null) {
-      final formatter = DateFormat.yMd().add_Hms();
+      final formatter = DateFormat.yMMMMd().add_Hms();
       final formatted = formatter.format(lastupdated);
       return 'Last updated: $formatted';
     }
