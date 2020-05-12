@@ -53,8 +53,23 @@ class InfoScreen extends StatelessWidget {
                 SizedBox(
                   height: 156,
                   child: Stack(
+                    alignment: Alignment.centerLeft,
                     children: <Widget>[
-                      
+                      Container(
+                        height: 136,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 8),
+                                blurRadius: 24,
+                                color: kShadowColor,
+                              ),
+                            ]),
+                      ),
+                      Image.asset("assets/images/wear_mask.png")
                     ],
                   ),
                 ),
