@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
             bodyText2: TextStyle(color: kBodyTextColor),
           ),
         ),
-        home: InfoScreen(),
+        home: HomeScreen(),
       ),
     );
   }
