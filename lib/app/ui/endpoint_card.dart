@@ -15,15 +15,15 @@ class EndpointCard extends StatelessWidget {
 
   static Map<Endpoint, EndPointCardData> _cardsData = {
     Endpoint.cases:
-        EndPointCardData('Cases', 'assets/count.png', Color(0xFFFFF492)),
+        EndPointCardData('Total Cases', 'assets/count.png', Colors.yellow),
     Endpoint.deaths:
-        EndPointCardData('Deaths', 'assets/death.png', Color(0xFFEEDA28)),
+        EndPointCardData('Total Deaths', 'assets/death.png', Colors.red[800]),
     Endpoint.recovered:
-        EndPointCardData('Recovered', 'assets/patient.png', Color(0xFFE99600)),
-    Endpoint.todayCases: EndPointCardData(
-        'Cases Today', 'assets/suspect.png', Color(0xFFE40000)),
+        EndPointCardData('Recovered', 'assets/patient.png', Colors.green),
+    Endpoint.todayCases:
+        EndPointCardData('Cases Today', 'assets/suspect.png', Colors.amber),
     Endpoint.todayDeaths:
-        EndPointCardData('Deaths Today', 'assets/death.png', Color(0xFF70A901)),
+        EndPointCardData('Deaths Today', 'assets/death.png', Colors.red[800]),
   };
 
   @override
@@ -57,7 +57,10 @@ class EndpointCard extends StatelessWidget {
                     Image.asset(cardData.assetName),
                     Text(
                       value != null ? value.toString() : '',
-                      style: Theme.of(context).textTheme.headline4,
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline4
+                          .copyWith(color: cardData.color),
                     ),
                   ],
                 ),
