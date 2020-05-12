@@ -1,5 +1,4 @@
 import 'package:coronavirus_tracker/app/services/data_cache_Service.dart';
-import 'package:coronavirus_tracker/app/ui/dashboard.dart';
 import 'package:coronavirus_tracker/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -129,8 +128,12 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 SvgPicture.asset("assets/icons/maps-and-flags.svg"),
+                SizedBox(width: 20),
                 Expanded(
                   child: DropdownButton(
+                    isExpanded: true,
+                    underline: SizedBox(),
+                    icon: SvgPicture.asset("assets/icons/dropdown.svg"),
                     value: 'World',
                     items: ['World', 'Europe', 'US', 'China Mainland']
                         .map<DropdownMenuItem<String>>(
@@ -144,6 +147,29 @@ class HomeScreen extends StatelessWidget {
                     onChanged: (value) {},
                   ),
                 ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(text: 'Case Update\n', style: kTitleTextstyle),
+                          TextSpan(
+                              text: 'Newest update May 12',
+                              style: TextStyle(color: kTextLightColor)),
+                        ],
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           ),
