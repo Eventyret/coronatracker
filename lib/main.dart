@@ -82,7 +82,21 @@ class HomeScreen extends StatelessWidget {
                 children: <Widget>[
                   Align(
                     alignment: Alignment.topRight,
-                    child: SvgPicture.asset("assets/icons/menu.svg")),
+                    child: SvgPicture.asset("assets/icons/menu.svg"),
+                  ),
+                  SizedBox(height: 20),
+                  Expanded(
+                    child: Stack(
+                      children: <Widget>[
+                        SvgPicture.asset(
+                          "assets/icons/Drcorona.svg",
+                          width: 230,
+                          fit: BoxFit.fitWidth,
+                          alignment: Alignment.topCenter,
+                        )
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
