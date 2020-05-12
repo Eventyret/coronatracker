@@ -230,13 +230,13 @@ class Counter extends StatelessWidget {
           width: 25,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: kInfectedColor.withOpacity(.26),
+            color: color.withOpacity(.26),
           ),
           child: Container(
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.transparent,
-              border: Border.all(color: kInfectedColor, width: 2),
+              border: Border.all(color: color, width: 2),
             ),
           ),
         ),
@@ -244,16 +244,13 @@ class Counter extends StatelessWidget {
           height: 10,
         ),
         Text(
-          "1046",
+          "$number",
           style: TextStyle(
             fontSize: 40,
-            color: kInfectedColor,
+            color: color,
           ),
         ),
-        Text(
-          "Infected",
-          style: kSubTextStyle,
-        )
+        Text(title, style: kSubTextStyle)
       ],
     );
   }
