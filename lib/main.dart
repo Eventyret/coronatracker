@@ -1,5 +1,5 @@
 import 'package:coronavirus_tracker/app/services/data_cache_Service.dart';
-import 'package:coronavirus_tracker/app/ui/dashboard.dart';
+import 'package:coronavirus_tracker/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
@@ -34,12 +34,40 @@ class MyApp extends StatelessWidget {
       ),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Coronavirus Tracker',
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: Color(0XFF101010),
-          cardColor: Color(0xFF222222),
+        title: 'Covid 19',
+        theme: ThemeData(
+          scaffoldBackgroundColor: kBackgroundColor,
+          textTheme: TextTheme(
+            bodyText2: TextStyle(color: kBodyTextColor),
+          ),
         ),
-        home: Dashboard(),
+        home: HomeScreen(),
+      ),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          Container(
+            height: 350,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Color(0xFF3383CD),
+                  Color(0xFF11249F),
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
