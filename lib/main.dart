@@ -150,6 +150,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 20),
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 20,
@@ -161,13 +162,20 @@ class HomeScreen extends StatelessWidget {
                     RichText(
                       text: TextSpan(
                         children: [
-                          TextSpan(text: 'Case Update\n', style: kTitleTextstyle),
+                          TextSpan(
+                              text: 'Case Update\n', style: kTitleTextstyle),
                           TextSpan(
                               text: 'Newest update May 12',
                               style: TextStyle(color: kTextLightColor)),
                         ],
                       ),
                     ),
+                    Spacer(),
+                    Text(
+                      "See Details",
+                      style: TextStyle(
+                          color: kPrimaryColor, fontWeight: FontWeight.w600),
+                    )
                   ],
                 )
               ],
